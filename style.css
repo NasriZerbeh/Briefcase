@@ -30,6 +30,10 @@ nav{
         }
     }
 
+    #Extend_Bar{
+        visibility: hidden;
+    }
+
     ul{
         position: absolute;
         display: flex;
@@ -44,6 +48,7 @@ nav{
                 font-size: large;
                 padding: 5px;
                 border-radius: 5px;
+                width: 100%;
                 transition: 500ms;    
             }
             a:hover{
@@ -280,7 +285,7 @@ nav{
 
         .Table_Head{
             font-size: x-large;
-            width: 75%;
+            width: 85%;
         }
 
         th, td{
@@ -425,4 +430,52 @@ nav{
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+@media(max-width:1000px){
+    .Extend_Bar
+    {
+        position: absolute;
+        right: 20px;
+        font-size: xx-large;
+        display: initial;
+        cursor: pointer;
+        visibility: visible;
+    }
+    .List_Bar
+    {
+        position: absolute;
+        top: 47px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 5px;
+        padding-left: 15px;
+        background-color: rgb(34, 57, 73);
+        border-bottom: solid 2px gray;
+
+        .List_Item{
+            margin: 5px;
+        }
+    }
+    #Extend_Bar:checked ~ #List_Bar
+    {
+        display: initial;
+    }
+
+    #Profile{
+        width: 30%;
+        left: 5%;
+    }
+
+    #Photo_Summary{
+        width: 30%;
+        mask-image: linear-gradient(-80deg, black 60%, transparent 65%);
+    }
+}
+
+@media(min-width:1000px){
+    .Extend_Bar{
+        visibility: hidden;
+    }
 }
